@@ -1,0 +1,264 @@
+@base-font-color: #eeeeee;
+@border-color: #363636;
+@border-shadow-style: inset 0 0 3px #000000;
+@font-shadow-style: 0 1px 1px #000000;
+@desktop-screen-width: 800px;
+@mobile-screen-width: 320px;
+.title-font-style (@font-size, @font-color, @line-height){
+	font-size: @font-size;
+	color: @font-color;
+	line-height: @line-height;
+	font-weight: normal;
+}
+
+/********** Common style **********/
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: none;
+	text-decoration: none;
+}
+a {
+	cursor: pointer;
+	text-decoration: none;
+	&:hover {
+		text-decoration: none;
+	}
+}
+.clear {
+	clear: both;
+}
+body {
+	font-family: 'Montserrat',Helvetica, Arial, sans-serif;
+	background: url('/img/background-image.jpg') repeat;
+	color: @base-font-color;
+}
+.header {
+	height: 65px;
+	h1 {
+		.title-font-style(24px, #ffffff, 26px);
+		font-weight: normal;
+		padding-left: 30px;
+		line-height: 48px;
+		span.name {
+			float: left;
+			text-indent: -9999px;
+			background: url('/img/signature.png') no-repeat;
+			width: 150px;
+			height: 48px;
+		}
+		span.version-num {
+			font-size: 10px;
+			color: #ededed;
+			padding-left: 10px;
+		}
+	}
+}
+.main-body {
+	
+}
+
+.tabs-left > .nav-tabs {
+	border-right: 1px solid #363636;
+}
+
+.tabs-left > .nav-tabs > li > a {
+	border-radius: 0;
+	border: none;
+	color: @base-font-color;
+	&:hover, &:active {
+		background: none;
+		border: none;
+		text-shadow: @font-shadow-style;
+		color: #4d6d8f;
+	}
+}
+
+.photo-category li a span {
+	display: block;
+}
+
+#toTop {
+		width: 50px;
+		height: 50px;
+		background: url('/img/go-top.png') no-repeat;
+		text-indent: -9999px;
+		position: fixed;
+		bottom: 15px;
+		left: 10px;
+		display: none;
+	}
+
+.footer {
+	font-size: 11px;
+	text-align: right;
+	color: silver;
+}
+
+/********** For desktop screen computer **********/
+@media (min-width: 780px) {
+	.photo-show-container {
+		.thumbnail {
+			border: 1px solid @border-color;
+			box-shadow: @border-shadow-style;
+			border-radius: 0;
+			background: #222222;
+			width: 100%;
+		}
+		h3 {
+			.title-font-style(14px, @base-font-color, 20px);
+			text-transform: uppercase;
+		}
+		p {
+			.title-font-style(12px, @base-font-color, 14px);
+			margin-bottom: 5px;
+			label {
+				padding-right: 5px;
+				.title-font-style(12px, #bfbfbf, 14px);
+				float: left;
+			}
+		}
+	}
+
+	.image-box-wrap {
+		li.image-box {
+			width: 22%;
+			float: left;
+			margin-left: 0px;
+			margin-right: 20px;
+			margin-bottom: 0px;
+		}
+	}
+
+	ul.gallery {
+		list-style: none;
+		width: 100%;
+		li {
+			float: left;
+			width: 23%;
+			list-style: none;
+			margin-right: 5px;
+			margin-bottom: 5px;
+			a {
+			}
+			img {
+			}
+		}
+	}
+}
+
+/*For iPad screen*/
+@media (min-width: 768px) and (max-width: 979px) {
+
+}
+
+
+
+/********** CSS for all mobile client **********/
+@media (max-width: 767px) {
+	* {
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
+	body {
+		padding: 0px;
+		margin: 0px;
+		font-size: 90%;
+		line-height: 12px;
+	}
+	.header {
+		height: 40px;
+		display: block;
+		h1 {
+			.title-font-style(16px, #ffffff, 20px);
+			font-weight: normal;
+			padding-left: 14px;
+			span.name {
+				background: url('/img/signature.png') no-repeat;
+				background-size: 100% 100%;
+				width: 95px;
+				height: 30px;
+				margin-top: -5px;
+				margin-left: -5px;
+			}
+			span.version-num {
+				font-size: 10px;
+				color: #ededed;
+				padding-left: 10px;
+			}
+		}
+	}
+	.container-fluid {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+	.photo-category {
+		/*position: fixed;*/
+	}
+	.tabs-left > .nav-tabs {
+		margin: 0;
+	}
+	.container-fluid .span2 {
+		width: 30%;
+	}
+	.container-fluid .span10 {
+		width: 68%;
+	}
+	.photo-show-container {
+		width: 100%;
+		h3 {
+			line-height: 18px;
+			color: @base-font-color;
+			text-transform: uppercase;
+		}
+		p {
+			line-height: 14px;
+			color: @base-font-color;
+			margin-bottom: 5px;
+		}
+		li.image-box {
+			width: 100%;
+			margin-bottom: 5px;
+			margin-left: 0px;
+			h3 {
+				font-size: 12px;
+			}
+			p {
+				font-size: 11px;
+				label {
+					float: left;
+					padding-right: 5px;
+					.title-font-style(11px, #bfbfbf, 14px);
+				}
+			}
+		}
+		.image-box .thumbnail {
+			border: 0;
+		}
+		.break-line div {
+			height: 0px;
+			border-top: 1px solid #363636;
+			box-shadow: 0 0 1px #000000;
+		}
+	}
+
+	ul.gallery {
+		list-style: none;
+		li {
+			float: left;
+			width: 45%;
+			list-style: none;
+			margin-bottom: 5px;
+			margin-right: 3px;
+			a {
+				float: left;
+			}
+			img {
+				float: left;
+			}
+		}
+	}
+}

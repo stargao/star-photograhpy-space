@@ -1,0 +1,98 @@
+@base-font-color: #eeeeee;
+.title-font-style(@font-size, @font-color, @line-height){
+	font-size: @font-size;
+	color: @font-color;
+	line-height: @line-height;
+	font-weight: normal;
+}
+
+/*Custom css style for Mobile client*/
+@media (max-width: 767px) {
+	* {
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
+	body {
+		padding: 0px;
+		margin: 0px;
+		font-size: 90%;
+		line-height: 12px;
+	}
+	.header {
+		height: 40px;
+		display: block;
+		h1 {
+			.title-font-style(16px, #ffffff, 20px);
+			font-weight: normal;
+			padding-left: 14px;
+			span.name {
+				background: url('/img/signature.png') no-repeat;
+				background-size: 100% 100%;
+				width: 95px;
+				height: 30px;
+				margin-top: -5px;
+				margin-left: -5px;
+			}
+			span.version-num {
+				font-size: 10px;
+				color: #ededed;
+				padding-left: 10px;
+			}
+		}
+	}
+	.container-fluid {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+	.photo-category {
+		/*position: fixed;*/
+	}
+	.tabs-left > .nav-tabs {
+		margin: 0;
+	}
+	.container-fluid .span2 {
+		width: 30%;
+	}
+	.container-fluid .span10 {
+		width: 68%;
+	}
+	.photo-show-container {
+		width: 100%;
+		h3 {
+			line-height: 18px;
+			color: @base-font-color;
+			text-transform: uppercase;
+		}
+		p {
+			line-height: 14px;
+			color: @base-font-color;
+			margin-bottom: 5px;
+		}
+		li.image-box {
+			width: 100%;
+			margin-bottom: 5px;
+			margin-left: 0px;
+			h3 {
+				font-size: 12px;
+			}
+			p {
+				font-size: 11px;
+				label {
+					float: left;
+					padding-right: 5px;
+					.title-font-style(11px, #bfbfbf, 14px);
+				}
+			}
+		}
+		.image-box .thumbnail {
+			border: 0;
+		}
+		.break-line div {
+			height: 0px;
+			border-top: 1px solid #363636;
+			box-shadow: 0 0 1px #000000;
+		}
+	}
+}
